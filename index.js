@@ -83,17 +83,24 @@ function runTool(toolName, args) {
       process.exit(1);
     }
     
-    // Set up process.argv for the tool
-    // The tool expects process.argv[2] to be the main argument
-    // We'll create a modified argv array
-    const originalArgv = process.argv;
-    process.argv = [originalArgv[0], originalArgv[1], ...args];
+    // Load the tool module and call its main function
+    const tool = require(toolPath);
     
-    // Require the tool module
-    require(toolPath);
-    
-    // Restore original argv (though process will likely exit)
-    process.argv = originalArgv;
+    // Call the tool's main function
+    if (typeof tool.main === 'function') {
+      // Save original argv and set it for the tool
+      const originalArgv = process.argv;
+      process.argv = [originalArgv[0], originalArgv[1], ...args];
+      
+      // Call main
+      tool.main();
+      
+      // Restore original argv
+      process.argv = originalArgv;
+    } else {
+      console.error(`Error: Tool "${toolName}" doesn't export a main() function`);
+      process.exit(1);
+    }
     
   } catch (error) {
     console.error(`Error running tool "${toolName}":`, error.message);

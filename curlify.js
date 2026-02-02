@@ -222,7 +222,8 @@ module.exports = {
   jsonToCurl,
   convert,
   showHelp,
-  showVersion
+  showVersion,
+  main
 }
 
 // Run if called directly

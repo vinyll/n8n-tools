@@ -8,9 +8,6 @@ A collection of command-line tools for n8n workflow automation. Streamline debug
 | Tool | Description | Status |
 |------|-------------|--------|
 | [curlify](#curlify) | Convert n8n HTTP request JSON logs to curl commands | ✅ Available |
-| n8n-to-postman | Convert n8n workflows to Postman collections | 🔜 Planned |
-| n8n-debugger | Enhanced debugging utilities for n8n | 🔜 Planned |
-| n8n-exporter | Export workflows with dependencies | 🔜 Planned |
 
 ## 🚀 Quick Start
 

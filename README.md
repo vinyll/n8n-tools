@@ -1,13 +1,16 @@
-# N8N Tools
 
-A collection of command-line tools for N8N workflow automation. Streamline debugging, testing, and sharing of N8N workflows with these developer-friendly utilities.
+# n8n-tools
+
+A collection of command-line tools for n8n workflow automation. Streamline debugging, testing, and sharing of n8n workflows with these developer-friendly utilities.
 
 ## Tools in this Collection
 
 | Tool | Description | Status |
 |------|-------------|--------|
-| [curlify](#curlify) | Convert N8N HTTP request JSON logs to curl commands | ✅ Available |
-
+| [curlify](#curlify) | Convert n8n HTTP request JSON logs to curl commands | ✅ Available |
+| n8n-to-postman | Convert n8n workflows to Postman collections | 🔜 Planned |
+| n8n-debugger | Enhanced debugging utilities for n8n | 🔜 Planned |
+| n8n-exporter | Export workflows with dependencies | 🔜 Planned |
 
 ## 🚀 Quick Start
 
@@ -16,8 +19,8 @@ A collection of command-line tools for N8N workflow automation. Streamline debug
 Run any tool directly without downloading or installing:
 
 ```bash
-# Using npx (recommended)
-npx N8N-tools curlify '{"method":"GET","url":"https://api.example.com"}'
+# Using npx with GitHub (package not yet published to npm)
+npx github:vinyll/n8n-tools curlify '{"method":"GET","url":"https://api.example.com"}'
 
 # Using Node.js with direct URL
 node -e "$(curl -fsSL https://raw.githubusercontent.com/vinyll/n8n-tools/main/curlify.js)" -- '{"method":"GET","url":"https://example.com"}'
@@ -29,29 +32,29 @@ curl -fsSL https://raw.githubusercontent.com/vinyll/n8n-tools/main/curlify.js | 
 ### Local Installation
 
 ```bash
-# Install the entire collection globally
-npm install -g N8N-tools
+# Install from GitHub (package not yet published to npm)
+npm install -g github:vinyll/n8n-tools
 
-# Or install locally
-npm install N8N-tools
+# Or install locally from GitHub
+npm install github:vinyll/n8n-tools
 
-# Use individual tools
+# Use individual tools (after global installation)
 curlify '{"method":"GET","url":"https://api.example.com"}'
 ```
 
 ## 📦 curlify
 
-The first tool in the collection - convert N8N HTTP request JSON logs into executable `curl` commands.
+The first tool in the collection - convert n8n HTTP request JSON logs into executable `curl` commands.
 
 ### Why curlify?
 
-When debugging N8N HTTP requests, you often need to:
-- Test requests outside of N8N workflows
+When debugging n8n HTTP requests, you often need to:
+- Test requests outside of n8n workflows
 - Share requests with team members
 - Debug failing APIs independently
-- Compare request behavior between N8N and other tools
+- Compare request behavior between n8n and other tools
 
-curlify solves this by converting N8N's HTTP request configuration (from the "Error Output" > "Request" tab) into ready-to-run curl commands.
+curlify solves this by converting n8n's HTTP request configuration (from the "Error Output" > "Request" tab) into ready-to-run curl commands.
 
 ### Usage Examples
 
@@ -62,17 +65,17 @@ curlify '{"method":"GET","url":"https://api.example.com/users"}'
 # POST with JSON body
 curlify '{"method":"POST","url":"https://api.example.com/users","headers":{"Content-Type":"application/json"},"body":{"name":"John","age":30},"json":true}'
 
-# From N8N workflow error output (copy from Error Output > Request)
-curlify '{"headers":{"accept":"application/json","user-agent":"N8N"},...}'
+# From n8n workflow error output (copy from Error Output > Request)
+curlify '{"headers":{"accept":"application/json","user-agent":"n8n"},...}'
 
 # Read from file
-curlify path/to/N8N-request.json
+curlify path/to/n8n-request.json
 
 # Pipe JSON
 echo '{"method":"DELETE","url":"https://api.example.com/resource/123"}' | xargs curlify
 ```
 
-### From N8N Workflow
+### From n8n Workflow
 
 1. Add an HTTP Request node to your workflow
 2. Configure your request as needed
@@ -80,7 +83,7 @@ echo '{"method":"DELETE","url":"https://api.example.com/resource/123"}' | xargs 
 4. Run the workflow and copy the JSON from error output
 5. Run: `curlify 'your_copied_json'`
 
-### Supported N8N Request Properties
+### Supported n8n Request Properties
 
 | Property | Description | curl Equivalent |
 |----------|-------------|-----------------|
@@ -99,7 +102,7 @@ echo '{"method":"DELETE","url":"https://api.example.com/resource/123"}' | xargs 
 ## 🌐 Web Service (Coming Soon)
 
 We're planning a web service where you can:
-- Paste N8N JSON and get curl commands instantly
+- Paste n8n JSON and get curl commands instantly
 - Share curl commands via URL
 - Save and organize converted requests
 - Collaborate with team members
@@ -124,7 +127,7 @@ We welcome contributions! Here's how:
 5. Open a Pull Request
 
 Please ensure:
-- Tools are focused on N8N workflow automation
+- Tools are focused on n8n workflow automation
 - Code follows existing style and patterns
 - Includes documentation and examples
 - Works with remote execution via npx
@@ -137,10 +140,14 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - **Issues**: Open a GitHub issue with example JSON and expected behavior
 - **Feature Requests**: Suggest new tools or improvements
-- **Questions**: Include your N8N version and environment details
+- **Questions**: Include your n8n version and environment details
 
 ## 🔗 Links
 
-- [N8N Official Website](https://N8N.io)
-- [N8N Documentation](https://docs.N8N.io)
+- [n8n Official Website](https://n8n.io)
+- [n8n Documentation](https://docs.n8n.io)
 - [GitHub Repository](https://github.com/vinyll/n8n-tools)
+
+---
+
+*Making n8n development easier, one tool at a time.*

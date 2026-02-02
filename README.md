@@ -69,7 +69,7 @@ curlify '{"method":"POST","url":"https://api.example.com/users","headers":{"Cont
 curlify '{"headers":{"accept":"application/json","user-agent":"n8n"},...}'
 
 # Read from file
-curlify path/to/n8n-request.json
+curlify example-request.json
 
 # Pipe JSON
 echo '{"method":"DELETE","url":"https://api.example.com/resource/123"}' | xargs curlify

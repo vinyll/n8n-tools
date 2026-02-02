@@ -1,0 +1,34 @@
+{
+  "method": "POST",
+  "url": "https://api.example.com/webhook",
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+    "User-Agent": "n8n",
+    "X-Custom-Header": "custom-value",
+    "Accept": "application/json"
+  },
+  "body": {
+    "event": "user.created",
+    "timestamp": "2024-02-02T12:00:00Z",
+    "data": {
+      "user": {
+        "id": 123,
+        "name": "Alice Johnson",
+        "email": "alice@example.com",
+        "roles": ["admin", "editor"]
+      },
+      "metadata": {
+        "source": "n8n-workflow",
+        "workflow_id": "wf-789",
+        "node_id": "http-request-456"
+      }
+    }
+  },
+  "json": true,
+  "gzip": true,
+  "rejectUnauthorized": false,
+  "followRedirect": true,
+  "timeout": 10000,
+  "resolveWithFullResponse": true
+}

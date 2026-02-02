@@ -131,9 +131,9 @@ Supported n8n properties:
   followRedirect, followAllRedirects, timeout, resolveWithFullResponse
 
 Installation options:
-  npx @vinyll/n8n-tools curlify '<json>'   # Run without installation
-  npm install -g @vinyll/n8n-tools         # Install globally
-  curlify '<json>'                 # Use after global install
+  npx github:vinyll/n8n-tools curlify '<json>'   # Run without installation (GitHub)
+  npm install -g github:vinyll/n8n-tools         # Install globally from GitHub
+  curlify '<json>'                               # Use after global install
 `)
 }
 

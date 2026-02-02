@@ -24,9 +24,9 @@ function printHelp() {
 n8n-tools v${VERSION} - A collection of tools for n8n workflow automation
 
 Usage:
-  npx @vinyll/n8n-tools <tool> [options]
-  npx @vinyll/n8n-tools help
-  npx @vinyll/n8n-tools version
+  npx github:vinyll/n8n-tools <tool> [options]
+  npx github:vinyll/n8n-tools help
+  npx github:vinyll/n8n-tools version
 
 Available tools:
 
@@ -35,19 +35,19 @@ ${Object.entries(availableTools).map(([name, info]) => {
 }).join('\n\n')}
 
 Examples:
-  npx @vinyll/n8n-tools curlify '{"method":"GET","url":"https://api.example.com"}'
-  npx @vinyll/n8n-tools help
+  npx github:vinyll/n8n-tools curlify '{"method":"GET","url":"https://api.example.com"}'
+  npx github:vinyll/n8n-tools help
 
 Install globally for direct tool access:
-  npm install -g @vinyll/n8n-tools
+  npm install -g github:vinyll/n8n-tools
   curlify '{"method":"GET","url":"https://example.com"}'
 
 Remote execution (no installation):
-  npx @vinyll/n8n-tools curlify '<json>'
+  npx github:vinyll/n8n-tools curlify '<json>'
   curl -fsSL https://raw.githubusercontent.com/vinyll/n8n-tools/main/curlify.js | node - -- '<json>'
 
 For detailed help on a specific tool, run the tool directly with --help:
-  npx @vinyll/n8n-tools curlify --help
+  npx github:vinyll/n8n-tools curlify --help
 `);
 }
 
@@ -67,7 +67,7 @@ function runTool(toolName, args) {
     console.error(`Error: Unknown tool "${toolName}"`);
     console.error();
     listTools();
-    console.error(`\nRun "npx @vinyll/n8n-tools help" for more information.`);
+    console.error(`\nRun "npx github:vinyll/n8n-tools help" for more information.`);
     process.exit(1);
   }
 

@@ -1,0 +1,45 @@
+{
+  "name": "n8n-tools",
+  "version": "1.0.0",
+  "description": "A collection of command-line tools for n8n workflow automation",
+  "main": "index.js",
+  "bin": {
+    "n8n-tools": "./index.js",
+    "curlify": "./curlify.js"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\"",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "n8n",
+    "curl",
+    "http",
+    "debugging",
+    "automation",
+    "workflow",
+    "tools",
+    "cli",
+    "collection",
+    "developer-tools"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/n8n-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/n8n-tools/issues"
+  },
+  "homepage": "https://github.com/yourusername/n8n-tools#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "*.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "preferGlobal": true
+}
